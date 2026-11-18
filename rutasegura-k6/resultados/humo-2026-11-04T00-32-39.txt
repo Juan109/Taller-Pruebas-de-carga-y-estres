@@ -1,0 +1,46 @@
+
+═════════════════════════════════════════════════════════════════════════════
+  RutaSegura · Resultado de la prueba: HUMO
+═════════════════════════════════════════════════════════════════════════════
+  Duración total:          30 s
+  VUs máximos:             3
+  Peticiones HTTP:         73  (2.4 req/s)
+  Iteraciones (+monitor):  17
+  Tasa de error HTTP:      0.00 %
+  Checks exitosos:         100.00 %
+  Incidentes creados:      10
+
+  Tiempos de respuesta        p50       p90       p95       p99       máx
+  ─────────────────────────────────────────────────────────────────────────
+  TODOS (viajeros)          108 ms    225 ms    284 ms    336 ms    349 ms
+  login                      57 ms     69 ms     70 ms     71 ms     72 ms
+  buscar_rutas                1 ms      4 ms     17 ms     26 ms     29 ms
+  detalle_ruta                1 ms      1 ms      1 ms      1 ms      1 ms
+  incidentes_ruta           117 ms    143 ms    150 ms    156 ms    157 ms
+  eta                       229 ms    330 ms    339 ms    347 ms    349 ms
+  reportar_incidente        159 ms    201 ms    229 ms    253 ms    258 ms
+  estadisticas              108 ms    153 ms    163 ms    172 ms    174 ms
+  flujo (con pausas)       1637 ms   1752 ms   1767 ms   1779 ms   1782 ms
+
+  Estado del servidor (muestreado por el monitor)
+  ─────────────────────────────────────────────────────────────────────────
+  Memoria RSS (MB):        último 68  (mín 67, máx 68)
+  Heap usado (MB):         último 11  (mín 10, máx 11)
+  Cola del pool BD:        último 0  (mín 0, máx 0)
+  Timeouts del pool:       último 0  (mín 0, máx 0)
+  Lag event loop p99 (ms): último 60.7  (mín 0, máx 110.1)
+  Entradas en caché:       último 24  (mín 15, máx 24)
+
+  Umbrales (SLO)
+  ─────────────────────────────────────────────────────────────────────────
+  ✔ CUMPLE     checks{scenario:viajeros}  rate==1
+  ✔ CUMPLE     http_req_duration{endpoint:buscar_rutas}  p(95)<300
+  ✔ CUMPLE     http_req_duration{endpoint:detalle_ruta}  p(95)<200
+  ✔ CUMPLE     http_req_duration{endpoint:estadisticas}  p(95)<1500
+  ✔ CUMPLE     http_req_duration{endpoint:eta}  p(95)<1000
+  ✔ CUMPLE     http_req_duration{endpoint:incidentes_ruta}  p(95)<500
+  ✔ CUMPLE     http_req_duration{endpoint:login}  p(95)<1000
+  ✔ CUMPLE     http_req_duration{endpoint:reportar_incidente}  p(95)<800
+  ✔ CUMPLE     http_req_duration{scenario:viajeros}  p(95)<1500
+  ✔ CUMPLE     http_req_failed{scenario:viajeros}  rate==0
+═════════════════════════════════════════════════════════════════════════════

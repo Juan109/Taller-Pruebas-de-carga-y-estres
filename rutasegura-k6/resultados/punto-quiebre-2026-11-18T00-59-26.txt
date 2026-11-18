@@ -1,0 +1,31 @@
+
+══════════════════════════════════════════════════════════════════════════════
+  RutaSegura · Resultado de la prueba: PUNTO-QUIEBRE
+══════════════════════════════════════════════════════════════════════════════
+  Duración total:          382 s
+  VUs máximos:             369
+  Peticiones HTTP:         31016  (81.2 req/s)
+  Iteraciones (+monitor):  7203
+  Tasa de error HTTP:      2.24 %
+  Checks exitosos:         97.41 %
+  Incidentes creados:      1378
+
+  Tiempos de respuesta        p50       p90       p95       p99       máx
+  ──────────────────────────────────────────────────────────────────────────
+  TODOS (viajeros)          112 ms   1099 ms   2001 ms   3979 ms   8933 ms
+  flujo (con pausas)        497 ms   2425 ms   7777 ms  15101 ms  19614 ms
+
+  Estado del servidor (muestreado por el monitor)
+  ──────────────────────────────────────────────────────────────────────────
+  Memoria RSS (MB):        último 138  (mín 38, máx 138)
+  Heap usado (MB):         último 80  (mín 6, máx 80)
+  Cola del pool BD:        último 96  (mín 0, máx 209)
+  Timeouts del pool:       último 531  (mín 0, máx 531)
+  Lag event loop p99 (ms): último 104.1  (mín 0, máx 161.5)
+  Entradas en caché:       último 1184  (mín 0, máx 1184)
+
+  Umbrales (SLO)
+  ──────────────────────────────────────────────────────────────────────────
+  ✔ CUMPLE     http_req_failed{scenario:viajeros}  rate<0.05
+  ✘ NO CUMPLE  http_req_duration{scenario:viajeros}  p(95)<2000
+══════════════════════════════════════════════════════════════════════════════
